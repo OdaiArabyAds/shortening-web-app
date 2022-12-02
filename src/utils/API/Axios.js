@@ -33,11 +33,9 @@ const Axios = (data) => {
   axios(configurations)
     .then((res) => {
       //Here to return the short link
-      return res?.result?.full_short_link;
+      return { link: res?.result?.full_short_link };
     })
     .catch((err) => {
-      //Here to check if the API has error code
-
       const data = err?.response?.data;
 
       if (data?.error_code) {
@@ -45,7 +43,7 @@ const Axios = (data) => {
         data?.error_code > 2 && callToast(data?.error);
 
         //Here we will return the code to run validation for input
-        return data?.error_code > 2;
+        return { error: data?.error_code > 2 };
       }
     });
 };
