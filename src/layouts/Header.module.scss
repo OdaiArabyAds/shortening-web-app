@@ -1,0 +1,91 @@
+@import "../assets/scss/main.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 10%;
+  position: relative;
+  .menu {
+    width: 100%;
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
+    .checkBox {
+      display: none;
+    }
+    ul {
+      display: flex;
+      align-items: center;
+
+      li:not(:nth-child(4)) {
+        margin-left: 2%;
+      }
+      li:nth-child(4) {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+@include media(tablet) {
+  .menu {
+    display: flex;
+    justify-content: end;
+
+    .hamburger {
+      display: block !important;
+      width: 20px;
+    }
+
+    .checkBox:checked ~ ul {
+      visibility: visible !important;
+      opacity: 1;
+    }
+
+    ul {
+      visibility: hidden;
+      opacity: 0;
+      margin-top: 30px;
+      padding: 20px 20px;
+      border-radius: 10px;
+      position: absolute;
+      flex-direction: column;
+      top: 30px;
+      left: 0;
+      right: 0;
+      background-color: $primary_Dark;
+
+      li {
+        &:nth-child(3) {
+          position: relative;
+          width: 100%;
+          text-align: center;
+          padding-bottom: 40px;
+        }
+        &:nth-child(3):after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 1px;
+          padding-top: 10px;
+
+          border-top: 1px solid $neutral_Grayish;
+        }
+        &:nth-child(5) {
+          width: 100% !important;
+        }
+        a {
+          color: $white;
+        }
+
+        margin: 0 !important;
+        padding: 10px 0;
+      }
+    }
+  }
+}

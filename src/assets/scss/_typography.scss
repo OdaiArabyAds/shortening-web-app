@@ -1,0 +1,23 @@
+//This file contains general styles for typography like paragraph ...etc
+a {
+  font: inherit;
+  text-decoration: none;
+  color: $neutral_Grayish;
+  transition: all 1s;
+  font-weight: 700;
+  &:hover {
+    color: $neutral_Dark_Violet;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+p {
+  font-size: 15px;
+}
+
+h1 {
+  color: $neutral_Dark_Violet;
+}
