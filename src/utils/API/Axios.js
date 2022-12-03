@@ -1,19 +1,5 @@
 import axios from "axios";
-import { toast } from "react-toastify";
-
-const callToast = (message) => {
-  //this is function to run notification UI
-  toast.error(message, {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: true,
-    closeOnClick: false,
-    pauseOnHover: false,
-    draggable: false,
-    progress: undefined,
-    theme: "light",
-  });
-};
+import runNotification from "../functions";
 
 const Axios = (data) => {
   //This is configurations for general calling api
@@ -30,20 +16,21 @@ const Axios = (data) => {
   }
 
   //calling api (axios)
-  axios(configurations)
+  return axios(configurations)
     .then((res) => {
       //Here to return the short link
-      return { link: res?.result?.full_short_link };
+
+      return { link: res?.data?.result?.full_short_link };
     })
     .catch((err) => {
       const data = err?.response?.data;
 
       if (data?.error_code) {
         //if the code more than 2 we will return false and run notification
-        data?.error_code > 2 && callToast(data?.error);
+        data?.error_code > 2 && runNotification(data?.error, "error");
 
         //Here we will return the code to run validation for input
-        return { error: data?.error_code > 2 };
+        return data?.error_code;
       }
     });
 };

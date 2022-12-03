@@ -1,0 +1,42 @@
+@import "../../../assets/scss/main.scss";
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../../../assets/images/bg-boost-desktop.svg");
+  background-color: $primary_Dark;
+  width: 100%;
+  h2 {
+    color: $white;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  input {
+    width: 15%;
+    margin-bottom: 30px;
+  }
+}
+
+@include media(tablet) {
+  .container {
+    h2 {
+      width: 40%;
+      text-align: center;
+    }
+    input {
+      width: 40%;
+    }
+  }
+}
+
+@include media(mobile) {
+  .container {
+    background-image: url("../../../assets/images/bg-boost-mobile.svg");
+    h2 {
+      width: 30%;
+    }
+    input {
+      width: 60%;
+    }
+  }
+}

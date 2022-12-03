@@ -1,0 +1,23 @@
+@import "../../../assets/scss/main.scss";
+
+.header {
+  font: inherit;
+  text-decoration: none;
+  color: $neutral_Grayish;
+  transition: all 1s;
+  font-weight: 700;
+  &:hover {
+    color: $neutral_Dark_Violet;
+  }
+}
+
+.footer {
+  font: inherit;
+  text-decoration: none;
+  color: $neutral_Grayish;
+  transition: all 1s;
+  font-weight: 700;
+  &:hover {
+    color: $neutral_Gray;
+  }
+}

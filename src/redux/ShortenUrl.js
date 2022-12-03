@@ -7,7 +7,7 @@ export const ShortenUrlSlice = createSlice({
   },
   reducers: {
     addUrl: (state, action) => {
-      state.urls.push(action.payload);
+      state.urls.unshift(action.payload);
     },
   },
 });

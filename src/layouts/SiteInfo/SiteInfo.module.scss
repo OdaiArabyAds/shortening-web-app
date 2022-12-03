@@ -1,0 +1,66 @@
+@import "../../assets/scss/main.scss";
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  .titlesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10%;
+    max-width: 370px;
+    p {
+      color: $neutral_Grayish;
+      margin-bottom: 30px;
+    }
+
+    input {
+      width: 50%;
+    }
+  }
+}
+
+@include media(tablet) {
+  .titleContainer {
+    justify-content: center;
+    align-items: end;
+    flex-direction: column;
+    // align-items: baseline;
+    .imageContainer {
+      img {
+        width: 90%;
+      }
+      margin-bottom: 20px;
+      order: 1;
+    }
+    .titlesContainer {
+      align-items: center;
+      order: 2;
+      text-align: center;
+      margin: 0 10%;
+      max-width: 100%;
+      input {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@include media(mobile) {
+  .titleContainer {
+    .titlesContainer {
+      input {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,49 +1,71 @@
 @import "../../assets/scss/main.scss";
-
-.titleContainer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-  .imageContainer {
-    img {
-      width: 100%;
+.upperContainer {
+  background-color: $white;
+  margin-bottom: 100px;
+}
+.lowerContainer {
+  background-color: $neutral_White;
+  .linksContainer {
+    overflow: hidden;
+    max-height: 600px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
-  .titlesContainer {
+
+  .StatisticContainer {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    margin-left: 10%;
-    max-width: 370px;
-    p {
-      color: $neutral_Grayish;
-      margin-bottom: 30px;
+    align-items: center;
+    .titleContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        color: $neutral_Grayish;
+        margin-top: 30px;
+        max-width: 450px;
+        text-align: center;
+      }
     }
-    h1 {
-      font-size: xx-large;
-    }
-    input {
-      width: 50%;
+
+    .cardContainer {
+      margin: 100px 20%;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+      &:after {
+        content: "";
+        position: absolute;
+        border: 4px solid $neutral_Dark_Blue;
+        width: 90%;
+        top: 50%;
+
+        z-index: -1;
+      }
     }
   }
 }
 
 @include media(tablet) {
-  .titleContainer {
+  .cardContainer {
     flex-direction: column;
-    .imageContainer {
-      margin-bottom: 20px;
-      order: 1;
-    }
-    .titlesContainer {
-      align-items: center;
-      order: 2;
-      text-align: center;
-      margin: 0 10%;
-      max-width: 100%;
-      input {
-        width: 100%;
-      }
+    margin: 30% 20%;
+    position: relative;
+    z-index: 1;
+    // align-items: center;
+    &:after {
+      content: "";
+      position: absolute;
+      border: 4px solid $neutral_Dark_Blue;
+      width: 100%;
+
+      right: 0;
+      transform: rotate(90deg);
+      z-index: -1;
     }
   }
 }

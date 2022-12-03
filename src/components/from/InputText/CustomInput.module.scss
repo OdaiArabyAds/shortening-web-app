@@ -1,0 +1,27 @@
+@import "../../../assets/scss/main.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  input {
+    padding: 10px;
+    font: inherit;
+    border-radius: 10px;
+  }
+  .containerError {
+    border: 2px solid $secondary_Red;
+    color: $secondary_Red;
+    &::placeholder {
+      color: $secondary_Red;
+      opacity: 0.5;
+    }
+  }
+  .errorMessage {
+    position: absolute;
+    top: 55px;
+    font-size: medium;
+    font-style: italic;
+    color: $secondary_Red;
+  }
+}

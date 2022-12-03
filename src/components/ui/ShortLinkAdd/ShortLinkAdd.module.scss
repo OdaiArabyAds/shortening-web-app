@@ -1,0 +1,41 @@
+@import "../../../assets/scss/main.scss";
+.container {
+  background-image: url("../../../assets/images/bg-shorten-desktop.svg");
+  margin: 20px 20% -70px 20%;
+  border-radius: 10px;
+  background-color: $primary_Dark;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 45px 50px;
+  margin-bottom :nth-child(1) {
+    flex: 3;
+    margin-right: 6px;
+  }
+  :nth-child(2) {
+    flex: 1;
+  }
+  :nth-child(1) {
+    flex: 4;
+    margin-right: 10px;
+  }
+}
+
+@include media(tablet) {
+  .container {
+    flex-direction: column;
+    align-items: revert;
+    padding: 15px 50px;
+    :nth-child(1) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
+@include media(mobile) {
+  .container {
+    background-image: url("../../../assets/images/bg-shorten-mobile.svg");
+    margin: 20px 2% -70px 2%;
+  }
+}

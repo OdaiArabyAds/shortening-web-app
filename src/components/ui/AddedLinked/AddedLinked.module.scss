@@ -1,0 +1,51 @@
+@import "../../../assets/scss/main.scss";
+.container {
+  background-color: $white;
+  border-radius: 10px;
+  display: flex;
+  margin: 20px 20%;
+
+  align-items: center;
+  :nth-child(1) {
+    margin: 10px 20px;
+    flex: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+  }
+  :nth-child(2) {
+    display: none;
+  }
+  :nth-child(3) {
+    margin: 10px 20px;
+    flex: 2;
+    margin-right: 10px;
+    color: $primary_Cyan;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  :nth-child(4) {
+    margin: 10px 20px;
+    flex: 1;
+  }
+}
+
+@include media(tablet) {
+  .container {
+    flex-direction: column;
+    align-items: revert;
+    :nth-child(1) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    :nth-child(2) {
+      display: block;
+      border: 0.1px solid $neutral_Gray;
+      opacity: 0.5;
+    }
+    :nth-child(4) {
+      margin: 20px;
+      width: unset;
+    }
+  }
+}
